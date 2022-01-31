@@ -39,4 +39,4 @@ jobs:
           ${{ secrets.DOCKER_HUB_USERNAME }}/multi-downloader-nx:latest
           ${{ secrets.DOCKER_HUB_USERNAME }}/multi-downloader-nx:${{ env.VERSION }}
         cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/multi-downloader-nx:buildcache
-        cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/multi-downloader-nx,mode=max
+        cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/multi-downloader-nx:buildcache,mode=max
