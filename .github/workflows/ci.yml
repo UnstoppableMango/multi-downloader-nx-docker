@@ -37,7 +37,7 @@ jobs:
         file: ./Dockerfile
         builder: ${{ steps.buildx.outputs.name }}
         push: ${{ github.event_name != 'pull_request' }}
-        args: VERSION=${{ env.APP_VERSION }}
+        build-args: VERSION=${{ env.APP_VERSION }}
         tags: |
           ${{ secrets.DOCKER_HUB_USERNAME }}/multi-downloader-nx:latest
           ${{ secrets.DOCKER_HUB_USERNAME }}/multi-downloader-nx:${{ env.VERSION }}
