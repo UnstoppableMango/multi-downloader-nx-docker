@@ -6,7 +6,7 @@ on:
     - "*.*.*"
 
 jobs:
-  ci:
+  release:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -40,3 +40,9 @@ jobs:
           ${{ secrets.DOCKER_HUB_USERNAME }}/multi-downloader-nx:${{ env.VERSION }}
         cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/multi-downloader-nx:buildcache
         cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/multi-downloader-nx:buildcache,mode=max
+
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ env.VERSION }}
+        generate_release_notes: true
