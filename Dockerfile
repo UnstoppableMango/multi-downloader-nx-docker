@@ -1,12 +1,11 @@
 FROM node:17-bullseye-slim AS build
 
-ARG VERSION=2.0.18
+ARG VERSION=3.0.0
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive \
     apt-get install -y --no-install-recommends \
         ca-certificates \
-        p7zip-full \
         git \
     && rm -rf /var/lib/apt/lists/*
 
@@ -18,11 +17,9 @@ RUN git \
         https://github.com/anidl/multi-downloader-nx.git \
     && cd multi-downloader-nx \
     && npm ci \
-    && npm run build-linux64 \
-    && BUILD=lib/_builds/multi-downloader-nx-${VERSION}-linux64 \
-    && mkdir /build \
-    && cp $BUILD/aniDL /build \
-    && cp -r $BUILD/config /build
+    && npx tsc \
+    && npx pkg lib/index.js --target node17-linux-x64 --output /build/aniDL \
+    && cp -r config /build/default-config
 
 FROM debian:bullseye-slim
 
@@ -34,7 +31,7 @@ RUN apt-get update && \
     && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/*
 
-COPY --from=build build/* ./
+COPY --from=build build/ ./
 
 VOLUME /config
 VOLUME /videos
