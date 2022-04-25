@@ -1,14 +1,12 @@
 # multi-downloader-nx Docker Image
 
-[![Docker Image Version (latest semver)](https://img.shields.io/docker/v/unstoppablemango/multi-downloader-nx?sort=date)](https://hub.docker.com/repository/docker/unstoppablemango/multi-downloader-nx)
-[![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/unstoppablemango/multi-downloader-nx?sort=date)](https://hub.docker.com/r/unstoppablemango/multi-downloader-nx)
+[![Docker Image Version (latest semver)](https://img.shields.io/docker/v/unstoppablemango/multi-downloader-nx?sort=semver)](https://hub.docker.com/repository/docker/unstoppablemango/multi-downloader-nx)
+[![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/unstoppablemango/multi-downloader-nx?sort=semver)](https://hub.docker.com/r/unstoppablemango/multi-downloader-nx)
 [![Docker Stars](https://img.shields.io/docker/stars/unstoppablemango/multi-downloader-nx)](https://hub.docker.com/r/unstoppablemango/multi-downloader-nx)
 
 This is a docker image for [anidl/multi-downloader-nx](https://github.com/anidl/multi-downloader-nx)
 
 ## Usage
-
-Bash:
 
 ```bash
 docker run -it --rm \
@@ -16,17 +14,6 @@ docker run -it --rm \
     -v <path-to-your-config>:/config:rw \
     -v <path-to-your-downloads>:/videos:rw \
     unstoppablemango/multi-downloader-nx \
-    <downloader-options>
-```
-
-Powershell:
-
-```powershell
-docker run -it --rm `
-    --name anidl `
-    -v <path-to-your-config>:/config:rw `
-    -v <path-to-your-downloads>:/videos:rw `
-    unstoppablemango/multi-downloader-nx `
     <downloader-options>
 ```
 
@@ -83,7 +70,7 @@ See [Configuration](#configuration).
 ## Configuration
 
 Currently all configuration is provided via commandline.
-Refer to the [source documentation](https://github.com/anidl/multi-downloader-nx/blob/2.0.18/docs/DOCUMENTATION.md) for all options.
+Refer to the [source documentation](https://github.com/anidl/multi-downloader-nx/blob/3.0.0/docs/DOCUMENTATION.md) for all options.
 
 To persist configuration such as authentication, mount a volume to `/config`.
 
