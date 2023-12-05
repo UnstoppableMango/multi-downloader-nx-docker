@@ -31,7 +31,7 @@ jobs:
         echo "APP_VERSION=$(cut -d'-' -f 1 VERSION)" >> $GITHUB_ENV
 
     - name: Build and Push
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v5
       with:
         context: .
         file: ./Dockerfile
