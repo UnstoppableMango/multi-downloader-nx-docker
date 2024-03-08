@@ -42,7 +42,7 @@ jobs:
         cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/multi-downloader-nx:buildcache,mode=max
 
     - name: Release
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       with:
         tag_name: ${{ env.VERSION }}
         generate_release_notes: true
