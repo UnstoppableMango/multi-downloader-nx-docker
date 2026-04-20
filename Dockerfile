@@ -1,4 +1,4 @@
-FROM node:22-bullseye-slim AS build
+FROM node:24-bullseye-slim AS build
 
 ARG VERSION=2.0.18
 
