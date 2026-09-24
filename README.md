@@ -3,6 +3,7 @@
 [![Docker Image Version (latest semver)](https://img.shields.io/docker/v/unstoppablemango/multi-downloader-nx?sort=date)](https://hub.docker.com/repository/docker/unstoppablemango/multi-downloader-nx)
 [![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/unstoppablemango/multi-downloader-nx?sort=date)](https://hub.docker.com/r/unstoppablemango/multi-downloader-nx)
 [![Docker Stars](https://img.shields.io/docker/stars/unstoppablemango/multi-downloader-nx)](https://hub.docker.com/r/unstoppablemango/multi-downloader-nx)
+[![Hercules CI](https://hercules-ci.com/api/v1/site/github/account/UnstoppableMango/project/multi-downloader-nx-docker/badge)](https://hercules-ci.com/github/UnstoppableMango/multi-downloader-nx-docker)
 
 This is a docker image for [anidl/multi-downloader-nx](https://github.com/anidl/multi-downloader-nx)
 
